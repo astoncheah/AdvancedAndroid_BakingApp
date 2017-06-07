@@ -1,0 +1,55 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/widgetRootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#09C"
+    android:orientation="vertical"
+    android:padding="@dimen/widget_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/imageButtonPrev"
+            android:layout_width="@dimen/widget_image_key"
+            android:layout_height="@dimen/widget_image_key"
+            android:padding="@dimen/widget_image_padding"
+            android:src="@drawable/exo_controls_previous"/>
+
+        <TextView
+            android:id="@+id/widgetTitleLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="@dimen/main_text_margin"
+            android:text="@string/ingredients"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:textColor="@android:color/background_light">
+        </TextView>
+
+        <ImageView
+            android:id="@+id/imageButtonNext"
+            android:layout_width="@dimen/widget_image_key"
+            android:layout_height="@dimen/widget_image_key"
+            android:padding="@dimen/widget_image_padding"
+            android:src="@drawable/exo_controls_next"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/widgetListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_light"
+        android:divider="#eeeeee"
+        android:dividerHeight="1dp"
+        tools:listitem="@layout/collection_widget_list_item">
+    </ListView>
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="app.example.android.bakingapp">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.ActivityRecipeList"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.RecipeStepListActivity"
+            android:parentActivityName=".ui.ActivityRecipeList"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="app.example.android.bakingapp.ui.ActivityRecipeList"/>
+        </activity>
+        <activity
+            android:name=".ui.RecipeStepDetailActivity"
+            android:label="@string/title_recipestep_detail"
+            android:parentActivityName=".ui.RecipeStepListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="app.example.android.bakingapp.ui.RecipeStepListActivity"/>
+        </activity>
+
+        <service
+            android:name=".sync.UpdaterService"
+            android:exported="false"/>
+        <service
+            android:name=".sync.WidgetRemoteViewsService"
+            android:permission="android.permission.BIND_REMOTEVIEWS">
+        </service>
+        <provider
+            android:name=".data.Provider"
+            android:authorities="app.example.android.bakingapp"
+            android:exported="false"/>
+
+        <receiver android:name=".ui.RecipeAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="app.example.android.bakingapp.PREVIOUS_RECIPE"/>
+                <action android:name="app.example.android.bakingapp.NEXT_RECIPE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/recipe_app_widget_info"/>
+        </receiver>
+    </application>
+
+</manifest>
