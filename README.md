@@ -6,7 +6,7 @@ A simple Android recipe app that displays recipes, details and recipe videos, co
 * Select Recipe Step Detail View - Portrait (Phone)
 * Select Recipe Step Detail View - Landscape (Phone)
 * Select a Recipe (Tablet)
-* Select and View Recipe Step Detail - (Tablet)
+* Select and View Recipe Step Detail - (Tablet)!!! testing!!!
 
 # Android Developer Nanodegree Project
 
