@@ -122,6 +122,8 @@ public class ActivityRecipeList extends AppCompatActivity implements LoaderManag
             holder.txtTitle.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
+                    //testing
+
                     Intent i = new Intent(context,RecipeStepListActivity.class);
                     i.putExtra("name",name);
                     i.putExtra("_ID",id);
