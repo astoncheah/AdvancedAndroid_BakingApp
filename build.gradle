@@ -7,6 +7,11 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
 
+		//testing svn v1
+		//testing svn v2
+		//testing svn v3
+		//testing svn v4
+        //testing svn v5 android studio
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
